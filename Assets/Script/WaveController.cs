@@ -22,10 +22,25 @@ public class WaveController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //法線ベクトルを基準にして反射ベクトルを取得contacts[0].normalであたったものの法線を基準にする意味？
+
+        //tag判定
+        if (collision.gameObject.tag == "wall")
+        {
             Vector3 reflectVector = Vector3.Reflect(this.lastVelocity, collision.contacts[0].normal);
             this.rigidbody.velocity = reflectVector;
-        this.transform.Rotate(0, 180, 0);
 
+            //GameObjectのz方向ベクトルを反射ベクトル方向に向ける。
+            this.transform.forward = reflectVector;
+            //        this.transform.Rotate(0, 180, 0);
+        }
+
+        //tag判定
+        if (collision.gameObject.tag == "Player")
+        {
+            Vector3 reflectVector = Vector3.Reflect(this.lastVelocity, collision.contacts[0].normal);
+            this.rigidbody.velocity = reflectVector;
+            this.transform.forward = reflectVector;
+
+        }
     }
 }

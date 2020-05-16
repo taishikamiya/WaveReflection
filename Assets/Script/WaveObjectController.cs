@@ -23,9 +23,37 @@ public class WaveObjectController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Vector3 reflectVector = Vector3.Reflect(this.lastVelocity, collision.contacts[0].normal);
-        this.rigidbody.velocity = reflectVector;
-        this.transform.Rotate(0, 180, 0);
+        //tag判定
+        if (collision.gameObject.tag == "wall")
+        {
+            Vector3 reflectVector = Vector3.Reflect(this.lastVelocity, collision.contacts[0].normal);
+            this.rigidbody.velocity = reflectVector;
+
+            //GameObjectのz方向ベクトルを反射ベクトル方向に向ける。
+            this.transform.forward = reflectVector;
+            //        this.transform.Rotate(0, 180, 0);
+        }
+
+        //tag判定
+        if (collision.gameObject.tag == "Player")
+        {
+            Vector3 reflectVector = Vector3.Reflect(this.lastVelocity, collision.contacts[0].normal);
+            this.rigidbody.velocity = reflectVector;
+            this.transform.forward = reflectVector;
+
+        }
+
+        //tag判定 triangle
+        
+        if (collision.gameObject.tag == "triangle")
+        {
+
+            Vector3 reflectVector = Vector3.Reflect(this.lastVelocity, collision.contacts[0].normal);
+            this.rigidbody.velocity = reflectVector;
+            this.transform.forward = reflectVector;
+            Debug.Log("tip");
+
+        }
 
     }
 }
