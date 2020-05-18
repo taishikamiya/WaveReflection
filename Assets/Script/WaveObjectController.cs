@@ -7,6 +7,8 @@ public class WaveObjectController : MonoBehaviour
     private Vector3 lastVelocity;
     private Rigidbody rigidbody;
 
+    public AudioClip sound; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,8 @@ public class WaveObjectController : MonoBehaviour
             //GameObjectのz方向ベクトルを反射ベクトル方向に向ける。
             this.transform.forward = reflectVector;
             //        this.transform.Rotate(0, 180, 0);
+
+            AudioSource.PlayClipAtPoint(sound, this.transform.position);
         }
 
         //tag判定

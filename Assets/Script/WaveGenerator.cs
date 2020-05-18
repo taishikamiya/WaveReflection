@@ -22,6 +22,7 @@ public class WaveGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //WAVE OBJECT
         if (Input.GetKeyDown(KeyCode.Space))
         {
 
@@ -31,16 +32,13 @@ public class WaveGenerator : MonoBehaviour
 
             //wave Objの生成
             GameObject waveObject = Instantiate(waveObjectPrefab) as GameObject;
-            //            waveObject.GetComponent<Rigidbody>().AddForce(0, 0, speed);
-            //          waveObject.GetComponent<Transform>().transform.position = new Vector3(playerPosition.x, playerPosition.y, playerPosition.z + 2);
-
             waveObject.GetComponent<Transform>().transform.position = playerTrans.position + playerTrans.forward;
             waveObject.GetComponent<Transform>().rotation = Quaternion.LookRotation(playerTrans.forward);
             waveObject.GetComponent<Rigidbody>().velocity = playerTrans.forward * speed;
 
         }
 
-        //WAVE OBJECT
+        //WAVE OBJEC
         if (Input.GetKeyDown(KeyCode.Z))
         {
             //Playerの位置を取得
