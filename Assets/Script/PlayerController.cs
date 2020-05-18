@@ -45,11 +45,14 @@ public class PlayerController : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
+        
         this.myRigidBody.velocity = new Vector3(x * speed, 0, z * speed);
 
         Vector3 diff = this.transform.position - this.PlayerPos;
 
-        if(diff.magnitude > 0.01f)
+
+        //キー入力があった場合のみ変更        
+        if(diff.magnitude > 0.01f &&  Input.anyKey)
         {
             this.transform.rotation = Quaternion.LookRotation(diff);
         }

@@ -32,7 +32,7 @@ public class WaveGenerator : MonoBehaviour
 
             //wave Objの生成
             GameObject waveObject = Instantiate(waveObjectPrefab) as GameObject;
-            waveObject.GetComponent<Transform>().transform.position = playerTrans.position + playerTrans.forward;
+            waveObject.GetComponent<Transform>().transform.position = playerTrans.position + playerTrans.forward + new Vector3(0,0.5f,0);
             waveObject.GetComponent<Transform>().rotation = Quaternion.LookRotation(playerTrans.forward);
             waveObject.GetComponent<Rigidbody>().velocity = playerTrans.forward * speed;
 
