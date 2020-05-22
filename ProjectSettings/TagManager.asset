@@ -8,6 +8,8 @@ TagManager:
   - triangle
   - waveObject
   - tip
+  - rect
+  - enemy
   layers:
   - Default
   - TransparentFX

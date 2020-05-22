@@ -11,7 +11,7 @@ public class WaveGenerator : MonoBehaviour
     private Transform playerTrans;
     private Vector3 playerPosition;
 
-    private float speed = 5.0f;
+    private float speed = 8.0f;
 
     // Start is called before the first frame update
     void Start()

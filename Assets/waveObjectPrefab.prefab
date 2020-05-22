@@ -101,7 +101,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 683cf7613745c48d3b892023b683303d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 8300000, guid: 354e9fe9fe2454ff4b7655cbef15f820, type: 3}
+  rectSound: {fileID: 8300000, guid: 27d9f1ec6d9784f439e457ad7b45179d, type: 3}
+  triangleSound: {fileID: 8300000, guid: 9c02d0a8c17174517bb9d2962a2c0d99, type: 3}
+  tipSound: {fileID: 8300000, guid: 1e8d296e93a0a493d82b339659a57714, type: 3}
+  enemySound: {fileID: 8300000, guid: 7cdaeea3b145747ada01871500ddba96, type: 3}
 --- !u!136 &5500377366058012437
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -126,9 +129,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 27d9f1ec6d9784f439e457ad7b45179d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 354e9fe9fe2454ff4b7655cbef15f820, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
